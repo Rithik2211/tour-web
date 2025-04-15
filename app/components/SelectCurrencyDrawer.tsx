@@ -9,12 +9,12 @@ const SelectCurrencyDrawer = () => {
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectLabel>Fruits</SelectLabel>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="blueberry">Blueberry</SelectItem>
-              <SelectItem value="grapes">Grapes</SelectItem>
-              <SelectItem value="pineapple">Pineapple</SelectItem>
+              <SelectLabel>Currency</SelectLabel>
+              <SelectItem value="apple">USD</SelectItem>
+              <SelectItem value="banana">Yen</SelectItem>
+              <SelectItem value="blueberry">Rs</SelectItem>
+              <SelectItem value="grapes">Euro</SelectItem>
+              <SelectItem value="pineapple">Dhirams</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>

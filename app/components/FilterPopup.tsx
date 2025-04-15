@@ -1,6 +1,7 @@
+
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { Globe } from 'lucide-react'
+import { SlidersHorizontal } from 'lucide-react'
 import React from 'react'
 import SelectCurrencyDrawer from './SelectCurrencyDrawer';
 
@@ -8,11 +9,13 @@ const languageValue = [
     "Spanish", "English", "Potuguese", "Deutsch", "Francias", "Italiano", "Nederlands", "Tamil", "Kannada", 'Malayalam'
 ]
 
-const NavCurencyPopup = () => {
+const FilterPopup = () => {
     return (
         <Dialog>
         <DialogTrigger asChild>
-            <Button variant="ghost" className='bg-transparent'><Globe className='text-black'/></Button>
+            <Button variant="outline">
+                <SlidersHorizontal /> Filters
+            </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
@@ -37,4 +40,4 @@ const NavCurencyPopup = () => {
       )
 }
 
-export default NavCurencyPopup
+export default FilterPopup
