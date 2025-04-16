@@ -14,9 +14,9 @@ import {
     MenubarTrigger,
   } from "@/components/ui/menubar"
   
-  export function MenubarDemo() {
+ const  CategoryMenubar = () => {
     return (
-      <Menubar>
+      <Menubar className="h-[50px] flex justify-evenly items-center py-4 text-center mb-[4]">
         <MenubarMenu>
           <MenubarTrigger>File</MenubarTrigger>
           <MenubarContent>
@@ -104,4 +104,6 @@ import {
         </MenubarMenu>
       </Menubar>
     )
-  }  
+}  
+
+export default CategoryMenubar;

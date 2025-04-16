@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogT
 import { SlidersHorizontal } from 'lucide-react'
 import React from 'react'
 import SelectCurrencyDrawer from './SelectCurrencyDrawer';
+import CategoryMenubar from './CategoryMenu';
 
 const languageValue = [
     "Spanish", "English", "Potuguese", "Deutsch", "Francias", "Italiano", "Nederlands", "Tamil", "Kannada", 'Malayalam'
@@ -17,12 +18,9 @@ const FilterPopup = () => {
                 <SlidersHorizontal /> Filters
             </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Choose a Curreny</DialogTitle>
-          </DialogHeader>
-          <SelectCurrencyDrawer />
-          <DialogTitle>Choose a Language</DialogTitle>
+        <DialogContent className="sm:max-w-[600px] pt-[40px] rounded-[20px]">
+          <CategoryMenubar />
+          <DialogTitle>Price Range</DialogTitle>
           <div className='grid grid-cols-2 gap-4'>
           {
             languageValue.map((item, index) => 
