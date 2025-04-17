@@ -13,12 +13,16 @@ import {
     MenubarSubTrigger,
     MenubarTrigger,
   } from "@/components/ui/menubar"
+import { BookHeart, MessageSquareMore, NotebookText, Plane } from "lucide-react";
   
  const  CategoryMenubar = () => {
     return (
-      <Menubar className="h-[50px] flex justify-evenly items-center py-4 text-center mb-[4]">
+      <Menubar className="h-auto flex justify-evenly items-center text-center mb-[4]">
         <MenubarMenu>
-          <MenubarTrigger>File</MenubarTrigger>
+          <MenubarTrigger className="flex flex-col gap-1">
+            <NotebookText />
+            Travel Guides
+            </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
               New Tab <MenubarShortcut>⌘T</MenubarShortcut>
@@ -43,7 +47,10 @@ import {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger>Edit</MenubarTrigger>
+          <MenubarTrigger className="flex flex-col gap-1">
+            <MessageSquareMore />
+            Consultation
+          </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>
               Undo <MenubarShortcut>⌘Z</MenubarShortcut>
@@ -69,7 +76,10 @@ import {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger>View</MenubarTrigger>
+          <MenubarTrigger className="flex flex-col gap-1">
+            <Plane />
+            Day Trips
+          </MenubarTrigger>
           <MenubarContent>
             <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
             <MenubarCheckboxItem checked>
@@ -89,7 +99,10 @@ import {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger>Profiles</MenubarTrigger>
+          <MenubarTrigger className="flex flex-col gap-1">
+            <BookHeart />
+            Creators
+          </MenubarTrigger>
           <MenubarContent>
             <MenubarRadioGroup value="benoit">
               <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
