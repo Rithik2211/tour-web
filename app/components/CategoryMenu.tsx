@@ -1,120 +1,58 @@
+'use client';
 import {
     Menubar,
-    MenubarCheckboxItem,
-    MenubarContent,
-    MenubarItem,
-    MenubarMenu,
-    MenubarRadioGroup,
-    MenubarRadioItem,
-    MenubarSeparator,
-    MenubarShortcut,
-    MenubarSub,
-    MenubarSubContent,
-    MenubarSubTrigger,
-    MenubarTrigger,
+    MenubarMenu
   } from "@/components/ui/menubar"
 import { BookHeart, MessageSquareMore, NotebookText, Plane } from "lucide-react";
+import { FC } from "react";
+
+interface CategoryMenubarprops {
+  setCategory : (e: string) => void;
+  category: string;
+}
   
- const  CategoryMenubar = () => {
+ const  CategoryMenubar :FC<CategoryMenubarprops> = ({setCategory, category}) => {
+
+    const categories = [
+      {
+        name : 'Travel Guides',
+        category: 'travel',
+        img : <NotebookText />
+      },
+      {
+        name : 'Consultation',
+        category: 'consult',
+        img : <MessageSquareMore />
+      },
+      {
+        name : 'Day Trips',
+        category: 'trip',
+        img : <Plane />
+      },
+      {
+        name : 'Creators',
+        category: 'creator',
+        img : <BookHeart />
+      },
+    ]
+
     return (
       <Menubar className="h-auto flex justify-evenly items-center text-center mb-[4]">
-        <MenubarMenu>
-          <MenubarTrigger className="flex flex-col gap-1">
-            <NotebookText />
-            Travel Guides
-            </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              New Window <MenubarShortcut>⌘N</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem disabled>New Incognito Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarSub>
-              <MenubarSubTrigger>Share</MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>Email link</MenubarItem>
-                <MenubarItem>Messages</MenubarItem>
-                <MenubarItem>Notes</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
-            <MenubarSeparator />
-            <MenubarItem>
-              Print... <MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className="flex flex-col gap-1">
-            <MessageSquareMore />
-            Consultation
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              Undo <MenubarShortcut>⌘Z</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-            </MenubarItem>
-            <MenubarSeparator />
-            <MenubarSub>
-              <MenubarSubTrigger>Find</MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>Search the web</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Find...</MenubarItem>
-                <MenubarItem>Find Next</MenubarItem>
-                <MenubarItem>Find Previous</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
-            <MenubarSeparator />
-            <MenubarItem>Cut</MenubarItem>
-            <MenubarItem>Copy</MenubarItem>
-            <MenubarItem>Paste</MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className="flex flex-col gap-1">
-            <Plane />
-            Day Trips
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
-            <MenubarCheckboxItem checked>
-              Always Show Full URLs
-            </MenubarCheckboxItem>
-            <MenubarSeparator />
-            <MenubarItem inset>
-              Reload <MenubarShortcut>⌘R</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem disabled inset>
-              Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
-            </MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem inset>Toggle Fullscreen</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem inset>Hide Sidebar</MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className="flex flex-col gap-1">
-            <BookHeart />
-            Creators
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarRadioGroup value="benoit">
-              <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-              <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-              <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-            </MenubarRadioGroup>
-            <MenubarSeparator />
-            <MenubarItem inset>Edit...</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem inset>Add Profile...</MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+        {
+          categories.map((menu, index) => (
+            <MenubarMenu key={index}>
+              <div className={`flex flex-col justify-center items-center bg-transparent gap-2 p-1 ${category === menu.category && 'border-b-3 border-b-black'}`} onClick={() => setCategory(menu.category)}>
+                {menu.img}
+                <label
+                    htmlFor="terms"
+                    className={`text-sm font-medium ${category === menu.category ? 'font-bold' : 'font-medium'} leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
+                >
+                    {menu.name}
+                </label>
+              </div>
+            </MenubarMenu>
+          ))
+        }
       </Menubar>
     )
 }  

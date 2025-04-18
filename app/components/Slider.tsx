@@ -6,7 +6,7 @@ type SliderProps = React.ComponentProps<typeof Slider>
 const SliderComp = ({ className, ...props }: SliderProps) => {
     return (
         <Slider
-          defaultValue={[50]}
+          defaultValue={[40]}
           max={100}
           step={1}
           className={cn("w-full", className)}
