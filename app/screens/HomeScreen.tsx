@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import FilterPopup from '../components/FilterPopup';
 import CategoryMenubar from '../components/CategoryMenu';
+import CourselCard from '../components/CourselCard';
 
 const HomeScreen = () => {
     const [homeCategory, setHomeCategory] = useState('all');
@@ -14,7 +15,7 @@ const HomeScreen = () => {
             <FilterPopup />
         </div>
         <div>
-
+            <CourselCard />
         </div>
     </div>
   )
