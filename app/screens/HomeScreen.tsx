@@ -15,7 +15,7 @@ const HomeScreen = () => {
             <FilterPopup />
         </div>
         <div>
-            <CourselCard />
+            {/* <CourselCard /> */}
         </div>
     </div>
   )
