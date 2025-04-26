@@ -37,7 +37,7 @@ interface CategoryMenubarprops {
     ]
 
     return (
-      <Menubar className="h-auto flex justify-evenly items-center text-center mb-[4]">
+      <Menubar className="h-auto flex justify-evenly items-center text-center mb-[4] bg-blue-50">
         {
           categories.map((menu, index) => (
             <MenubarMenu key={index}>

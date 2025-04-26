@@ -16,7 +16,7 @@ const HomeScreen = () => {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 mt-8'>
             {
-                Array.from({ length: 12 }).map((_, index) => (
+                Array.from({ length: 20 }).map((_, index) => (
                     <div key={index} className='mb-4'>
                         <CourselCard />
                     </div>

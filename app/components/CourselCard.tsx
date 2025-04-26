@@ -36,13 +36,13 @@ const CourselCard = () => {
   return (
     <div className="mx-auto max-w-xs">
       <Carousel opts={{ loop: true }} setApi={setApi} className="w-full max-w-xs">
-        <CarouselPrevious className="z-10 absolute top-45 left-2"/>
-        <CarouselNext className="z-10 absolute top-45 right-2"/>
-        <h1 className= "z-10 absolute top-8 left-8 py-0.5 px-3 rounded-[18px] bg-white text-black text-sm font-medium flex flex-row gap-1"><Star className="text-yellow-500 w-5 h-5"/> Top Rated </h1>
+        <CarouselPrevious className="z-2 absolute top-45 left-2"/>
+        <CarouselNext className="z-2 absolute top-45 right-2"/>
+        <h1 className= "z-2 absolute top-8 left-8 py-0.5 px-3 rounded-[18px] bg-white text-black text-sm font-medium flex flex-row gap-1"><Star className="text-yellow-500 w-5 h-5"/> Top Rated </h1>
         <CarouselContent>
           {CourselData.map((data, index) => (
             <CarouselItem key={index}>
-              <Card>
+              <Card className="bg-blue-50">
                 <CardContent className="aspect-square overflow-hidden">
                     <img  src={data} className="object-cover h-full w-full rounded-[8px]"/>
                 </CardContent>

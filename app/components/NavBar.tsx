@@ -5,7 +5,7 @@ import NavCurencyPopup from './NavCurencyPopup';
 
 const NavBar = () => {
   return (
-    <div className='w-full h-[55px] py-2 px-[30px] fixed flex justify-between items-center border-b-1 backdrop-blur-md'>
+    <div className='w-full h-[55px] py-2 px-[30px] fixed flex justify-between items-center border-b-1 backdrop-blur-md z-3'>
         <div className='flex flex-row justify-between items-center'>
             <h1 className='text-2xl font-semibold'>Travel Point</h1>
         </div>

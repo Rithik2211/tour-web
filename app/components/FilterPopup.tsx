@@ -23,7 +23,7 @@ const FilterPopup = () => {
     return (
         <Dialog >
         <DialogTrigger asChild>
-            <Button variant="outline" className='py-4 h-[45px]'>
+            <Button variant="outline" className='py-4 h-[45px] bg-blue-50'>
                 <SlidersHorizontal /> Filters
             </Button>
         </DialogTrigger>

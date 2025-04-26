@@ -8,7 +8,7 @@ const NavLoginPopup = () => {
   return (
     <Dialog>
     <DialogTrigger asChild>
-        <Button variant="outline">Login</Button>
+        <Button variant="outline" className='bg-blue-50'>Login</Button>
     </DialogTrigger>
     <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>
