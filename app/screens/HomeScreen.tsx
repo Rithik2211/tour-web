@@ -12,7 +12,7 @@ const HomeScreen = () => {
             <div className='w-[550px]'>
                 <CategoryMenubar setCategory={setHomeCategory} category={homeCategory}/>
             </div>
-            <FilterPopup />
+            {/* <FilterPopup /> */}
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 mt-8'>
             {
