@@ -2,13 +2,14 @@ import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { LogIn } from 'lucide-react'
 import React from 'react'
 
 const NavLoginPopup = () => {
   return (
     <Dialog>
     <DialogTrigger asChild>
-        <Button variant="outline" className='bg-blue-50'>Login</Button>
+        <Button variant="outline" className='bg-black rounded-[20px] text-white'> <LogIn />Login</Button>
     </DialogTrigger>
     <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>
@@ -32,7 +33,7 @@ const NavLoginPopup = () => {
         </div>
       </div>
       <DialogFooter>
-        <Button type="submit">Login</Button>
+        <Button type="submit" className='bg-black text-white'> <LogIn/> Login</Button>
       </DialogFooter>
     </DialogContent>
   </Dialog>
